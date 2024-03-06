@@ -1,0 +1,81 @@
+main {
+  margin: 0 1vw;
+  margin-top: 25px;
+  z-index: 0;
+}
+
+:root {
+  --color_scheme_blue: #007dff;
+  --color_scheme_green: #179559;
+  --color_scheme_pink: #ef234f;
+}
+
+#slip_bg_container {
+  height: 75vh;
+  width: 25vw;
+  margin-top: 2%;
+  position: absolute;
+  right: 1.5vw;
+  box-shadow: 10px 10px 10px #007dff;
+  color: white;
+  border: 1px solid var(--color_scheme_green);
+  border-radius: 20px;
+  padding: 0;
+  overflow: hidden;
+  background-image: url('../images/oig.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: bottom;
+}
+
+#slip {
+  position: relative; 
+  width: inherit; 
+  height: inherit; 
+  background: transparent; 
+  backdrop-filter: blur(10px);
+  overflow: hidden;
+  color: #444;
+  text-shadow: 1px 1px 1px #fff;
+  font-family: Poppins; 
+  z-index: 2;  
+}
+
+#slip p
+{
+  margin-top: 5px; 
+  padding-left: 5px;
+}
+
+.slip_hidden {
+  display: none;
+}
+
+.close {
+  position: relative;
+  background-color: var(--color_scheme_green);
+  color: #fff;
+  width: 35px;
+  float: right;
+  padding: 2%;
+  margin: 0;
+  border-bottom-left-radius: 20px;
+  text-align: center;
+}
+
+#slip_title
+{
+  position: absolute;
+  padding-top: 2%;
+  color: #fff;
+  padding-left: 5px;
+  height: fit-content;
+  width: inherit;
+  padding-bottom: 2%;
+  background-color: var(--color_scheme_blue);
+  text-align: center;
+  overflow: hidden;
+}
+
+
+/*# sourceMappingURL=laini_style.css.map */

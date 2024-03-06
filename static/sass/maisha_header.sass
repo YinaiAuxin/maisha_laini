@@ -1,0 +1,208 @@
+$color_scheme_pink: #ef234f
+$color_scheme_blue: #007dff
+$color_scheme_green: #179559
+
+@mixin vertical-align_center()
+    position: relative
+    top: 50%
+    transform: translateY(-50%)
+    height: fit-content
+    width: fit-content
+    margin: 0 auto
+
+//undo default browser margin and padding    
+*
+    padding: 0
+    margin: 0
+
+    &::selection
+        background-color: $color_scheme_pink
+        color: #fff
+
+//undo bootstrap default values for un-ordered lists
+ul
+    padding-left: 0
+    margin-bottom: 0
+
+//Styling starts here from page top
+//undo bootstrap 'container-fluid' default padding
+body div.container-fluid
+    padding: 0
+
+header
+    position: fixed
+    width: inherit
+    top: 0
+    z-index: 1
+    background-color: #fff
+    height: fit-content
+    font-family: 'Poppins'
+    box-shadow: 0px 5px 5px #999
+    user-select: none
+
+header div#bg_img_container
+    background-image: url('../images/header_bg.jpeg')
+    background-repeat: no-repeat
+    background-size: cover
+
+header div#bg_img_container div#logo_container
+    display: block
+    width: 100%
+    background: transparent
+    backdrop-filter: blur(25px)
+    display: flex
+    justify-content: space-between
+    padding: 0 1vw
+
+    img#logo
+        height: 60px
+        cursor: pointer
+
+    ul#social_media
+        list-style-type: none
+        display: block
+        height: inherit
+        font-size: 20px
+        width: 30%
+
+    ul#social_media li
+        float: left
+        width: 20%
+        position: relative
+        top: 50%
+        transform: translateY(-50%)
+
+        a[href*=facebook]
+            color: #1877F2
+
+        a[href*=youtube]
+            color: #ff0000
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5)
+
+        a[href*=twitter]
+            color: #000
+
+        a[href*=instagram]
+            color: transparent
+            background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%)
+            background-clip: text
+
+        a[href*=tiktok]
+            color: #010101
+            text-shadow: 2px 1px 2px $color_scheme_pink
+        
+        a
+            text-decoration: none
+
+            &:hover
+                color: $color_scheme_pink
+                text-shadow: 2px 1px 2px black
+                cursor: pointer
+        
+    form#search input
+        @include vertical-align_center
+        height: 75%
+        min-height: 35px
+        border-radius: 10px
+        margin-right: 1%
+        border: hidden
+        outline-style: none
+        border-inline-color: $color_scheme_green
+        border-inline-style: solid
+        color: #000
+        background-color: #ddd
+        padding-left: 2%
+
+        &:hover
+            box-shadow: 0 0 5px 2px $color_scheme_pink
+            background-color: #fff
+            color: #555
+            transition-duration: 0.5s
+            transition-property: all
+        
+        &:focus
+            box-shadow: 0 0 5px 2px $color_scheme_blue
+            background-color: #fff
+            color: #555
+    
+header hr    
+    border-top: 2px solid $color_scheme_blue
+    border-bottom: 2px solid white
+    opacity: 1
+    line-height: normal
+    border-left: none
+    border-right: none
+    margin: 0
+    padding: 0
+    
+header nav
+    display: block
+    height: 50px
+    background-color: $color_scheme_blue
+
+header nav ul.nav
+    margin: 0 1vw
+    padding: 0
+    height: 100%
+    color: #fff
+
+    li
+        display: block
+        width: fit-content
+        height: inherit
+        text-align: center
+        float: left
+        padding: 0 2%
+
+        p 
+            @include vertical-align_center
+            font-size: calc(10px + 0.6vw)
+
+    li.btn
+        border-radius: 0
+
+    li.menu-item-inactive
+        opacity: 0.8
+    
+    li.menu-item-active
+        color: #fff
+        background-color: #179559
+        text-shadow: 5px 2px 5px black
+
+    li#greet_msg
+        width: fit-content
+        margin: 0 1vw
+        padding: 0
+        color: #fff
+        font-family: pacifico
+    
+    li#cart
+        width: fit-content
+        padding: 0 1vw 0 1vw
+        cursor: pointer
+
+    li.hover_nav
+        cursor: pointer
+        text-shadow: black 5px 2px 5px
+        color: white
+        background-color: rgba(255, 255, 255, 0.2)
+        opacity: 1 !important
+        transition-duration: 800ms
+        transition-property: all
+
+    li.main-menu-list-item
+        a
+            @include vertical-align_center
+            color: inherit
+            text-decoration: none
+            float: right
+            font-size: calc(10px + 0.6vw)
+
+        i
+            @include vertical-align_center
+            transform: translateY(-75%)
+            color: #fff
+            cursor: pointer
+
+#header_cover
+    z-index: 0

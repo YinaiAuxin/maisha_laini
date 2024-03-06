@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en-ZA">
+    <head>
+        <meta name="viewport" content="initial-scale=1, width=device-width">
+        <meta charset="utf-8">
+        <meta name="keywords" content="">
+        <link type="text/css" rel="stylesheet" href="../static/bootstrap/css/bootstrap.min.css">
+        <link type="text/css" rel="stylesheet" href="../static/css/laini_style.css">
+        <link type="text/css" rel="stylesheet" href="../static/css/maisha_header.css">
+        <link type="text/css" rel="stylesheet" href="../static/css/login.css">
+        <link type="text/css" rel="stylesheet" href="../static/css/products.css">
+        <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins|Protest+Riot|Protest+Revolution|Pacifico">
+        <link rel="icon" href="data:;base64,=">
+        <script type="text/javascript" src="../static/javascript/global_variables.js" defer></script>
+        <script type="text/javascript" src="../static/javascript/laini_script.js" defer></script>
+        <script type="text/javascript" src="../static/javascript/site_navigation.js" defer></script>
+        <script type="text/javascript" src="../static/javascript/login_register.js" defer></script>
+        <script type="text/javascript" src="../static/javascript/fixed_elements_style.js" defer></script>
+        <title>Maisha Laini</title>
+    </head>
+    <body>
+        <div class="container-fluid">
+            <header>
+                <div id="bg_img_container">
+                    <div id="logo_container">
+                        <img src="../static/images/final_logo.png" alt="Maisha Laini" id="logo">
+                        <ul  id="social_media">
+                            <li><a class="fab fa-facebook" href="https://web.facebook.com/wawa.TheYai/" target="_blank"></a></li>
+                            <li><a class="fab fa-x-twitter" href="https://twitter.com/" target="_blank"></a></li>
+                            <li><a class="fab fa-youtube" href="https://www.youtube.com/channel/UC0XuhBxlV4hCpqJwG-dgMDw" target="_blank"></a></li>
+                            <li><a class="fab fa-instagram" href="https://www.instagram.com/" target="_blank"></a></li>
+                            <li><a class="fab fa-tiktok" href="https://www.tiktok.com/@wa_wa96172" target="_blank"></a></li>
+                        </ul>
+                        <form method="post" action="contact_us" id="search">
+                            <input type="text" name="q" placeholder="Search..."/>
+                        </form>
+                    </div>
+                </div>
+                <hr>
+                <nav>
+                    <ul class="nav">
+                        <li class="main-menu-list-item">
+                            <a>Explore</a>
+                        </li>
+                        <li class="main-menu-list-item">
+                            <a>Grab a Bite</a>
+                        </li>
+                        <li class="main-menu-list-item">
+                            <a>Join our Team</a>
+                        </li>
+                        <li class="main-menu-list-item">
+                            <a>Contact us</a>
+                        </li>
+                        <li class="ms-auto main-menu-list-item" id="greet_msg">
+                            <p>{{ name }}</p>
+                        </li>
+                        <li class="main-menu-list-item" id="cart"><i class="fa fa-shopping-basket"></i></li>
+                        <li class="btn btn-info" role="button" id="login">
+                            {% if name in ['Guest'] %}
+                            <p id="sign_in">Sign in</p>
+                            {% else %}
+                            <p id="logout">Logout</p>
+                            {% endif %}
+                        </li>
+                    </ul>
+                    <div style="clear: both;"></div>
+                </nav>
+            </header>
+            <div id="header_cover"></div>
+            {% block body %}{% endblock %}
+            <div class="cover_div"></div>
+            <div class="bg_lgn_container">
+                <div class="wrapper">
+                    <span class="icon_close fa fa-x"></span>
+                    <div class="form_box login">
+                        <h2>Login</h2>
+                        <form id="login">
+                            <div class="input_box">
+                                <span class="icon fa fa-user"></span>
+                                <input id="username_l" type="text" autocomplete="off" name="user" required>
+                                <label for="username_l">Username</label>
+                                <p id="user_l_msg" class="invalid_reg"></p>
+                            </div>
+                            <div class="input_box">
+                                <span class="icon fa fa-lock"></span>
+                                <input id="password_l" type="password" autocomplete="off" name="pwd" required>
+                                <label for="password_l">Password</label>
+                                <p id="pwd_l_msg" class="invalid_reg"></p>
+                            </div>
+                            <div class="remember_forgot">
+                                <label><input id="rmb_pwd" type="checkbox">
+                                Remember me</label>
+                                <a href="#">Forgot password</a>
+                            </div>
+                            <input id="login_submit" value="login" class="lgn_btn">
+                            <div class="login_register">
+                                <p>Don't have an account? <a href="#" class="register_link">Register</a></p>
+                            </div>
+                        </form>
+                    </div>
+    
+                    <div class="form_box register">
+                        <h2>Registration</h2>
+                        <form id="register" action="/register" method="POST">
+                            <div class="input_box">
+                                <span class="icon fa fa-person"></span>
+                                <input id="fname" type="text" autocomplete="off" name="fname" required>
+                                <label for="fname">Full Name</label>
+                            </div>
+                            <div class="input_box">
+                                <span class="icon fa fa-user"></span>
+                                <input id="username_r" type="text" autocomplete="off" name="user" required>
+                                <label for="username_r">Username</label>
+                                <p id="usr_msg" class="invalid_reg"></p>
+                            </div>
+                            <div class="input_box">
+                                <span class="icon fa fa-envelope"></span>
+                                <input id="email" type="email" autocomplete="off" name="email" required>
+                                <label for="email">Email</label>
+                                <p id="email_msg" class="invalid_reg"></p>
+                            </div>
+                            <div class="input_box">
+                                <span class="icon fa fa-lock"></span>
+                                <input id="password_r" type="password" autocomplete="off" name="pwd" required>
+                                <label for="password_r">Password</label>
+                                <p id="pwd_r_msg" class="invalid_reg"></p>
+                            </div>
+                            <div class="remember_forgot">
+                                <label><input id="agree_t_n_cs" type="checkbox">
+                                I agree to the terms & conditions</label>
+                            </div>
+                            <input  id="register_submit" type="submit" value="Register" class="lgn_btn disabled" disabled>
+                            <div class="login_register">
+                                <p>Already have an account? <a href="#" class="login_link">Login</a></p>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

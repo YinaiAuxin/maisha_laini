@@ -1,0 +1,70 @@
+{% extends "layout.html" %}
+{% block body %}
+<main>
+    <ul>
+        <li class="prod_info start">
+            <p class="prodName">Beyond Teal</p>
+            <img src="../static/images/the_teal.jpeg" alt="The Teal Burger" class="prod_img">
+            <div style="clear: both;"></div>
+            <span class="orderType">
+                <p class="single">Burger Only</p><p class="price ms-auto">23.99</p>
+            </span>
+            <span class="orderType">
+                <p class="combo">Combo</p><p class="price ms-auto">41.99</p>
+            </span>
+        </li>
+        <li class="prod_info even">
+            <span class="orderType">
+                <p class="single">Burger Only</p><p class="price ms-auto">42.99</p>    
+            </span>
+            <span class="orderType">
+                <p class="combo">Combo</p><p class="price ms-auto">59.73</p>    
+            </span>   
+            <img src="../static/images/seven_colours.jpeg" alt="The Teal Burger" class="prod_img">
+            <div style="clear: both;"></div>
+            <p class="prodName">Heart Attack</p>
+        </li>
+        <li class="prod_info mid">
+            <p class="prodName">Beyond Teal</p>
+            <img src="../static/images/the_teal.jpeg" alt="The Teal Burger" class="prod_img">
+            <div style="clear: both;"></div>
+            <span class="orderType">
+                <p class="single">Burger Only</p><p class="price ms-auto">23.99</p>
+            </span>
+            <span class="orderType">
+                <p class="combo">Combo</p><p class="price ms-auto">41.99</p>
+            </span>
+        </li>
+        <li class="prod_info even">
+            <span class="orderType">
+                <p class="single">Burger Only</p><p class="price ms-auto">42.99</p>    
+            </span>
+            <span class="orderType">
+                <p class="combo">Combo</p><p class="price ms-auto">59.73</p>    
+            </span>   
+            <img src="../static/images/seven_colours.jpeg" alt="The Teal Burger" class="prod_img">
+            <div style="clear: both;"></div>
+            <p class="prodName">Heart Attack</p>
+        </li>
+        <li class="prod_info end">
+            <p class="prodName">Beyond Teal</p>
+            <img src="../static/images/the_teal.jpeg" alt="The Teal Burger" class="prod_img">
+            <div style="clear: both;"></div>
+            <span class="orderType">
+                <p class="single">Burger Only</p><p class="price ms-auto">23.99</p>
+            </span>
+            <span class="orderType">
+                <p class="combo">Combo</p><p class="price ms-auto">41.99</p>
+            </span>
+        </li>
+    </ul>
+    <script async>
+        const prodImageTitle = document.getElementsByClassName('prod_img');
+        const productLength = prodImageTitle.length;
+        for(let i = 0; i < productLength; i++)
+        {
+            prodImageTitle[i].setAttribute('title', 'Double click to get product nutritional information');
+        }
+    </script>
+</main>
+{% endblock %}

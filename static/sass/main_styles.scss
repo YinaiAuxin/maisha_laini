@@ -1,0 +1,136 @@
+nav {
+    ul li.btn {
+        border-radius: 0%;
+    }
+    ul li {
+        display: block;
+        width: fit-content;
+        height: inherit;
+        text-align: center;
+        float: left;
+        padding: 0 2%;
+
+        a {
+            @include vertical-align_center();
+            color: inherit;
+            text-decoration: none;
+            float: right;
+            font-size: calc(10px + 0.6vw);
+        }
+        p {
+            @include vertical-align_center(); 
+            font-size: calc(10px + 0.6vw);
+        }
+        i {
+            @include vertical-align_center();
+            transform: translateY(-75%);
+            color: #fff;
+            cursor: pointer;
+        }
+    }
+}
+
+.menu-item-inactive
+{
+    opacity: 0.8;
+}
+.menu-item-active
+{
+    color: #fff;
+    background-color: #179559;
+    text-shadow: 5px 2px 5px black;
+}
+
+nav
+{
+    display: block;
+    height: 50px;
+    background-color: var(--color_scheme_blue);   
+}
+header nav ul #greet_msg
+{
+    width: fit-content;
+    margin: 0 1vw;
+    padding: 0;
+    color: #fff;
+    font-family: pacifico;
+}
+header nav ul #cart
+{
+    width: fit-content;
+    padding: 0 1vw 0 1vw;
+    border-width: 0 1px;
+    cursor: pointer;
+}
+
+.hover_nav
+{
+    cursor: pointer;
+    text-shadow: black 5px 2px 5px;
+    color: white;
+    background-color: rgba(255, 255, 255, 0.2);
+    opacity: 1 !important;
+    transition-duration: 800ms;
+    transition-property: all;
+}
+#header_cover
+{
+    z-index: 0;
+}
+main
+{
+    margin: 0 1vw;
+    z-index: 0;
+}
+:root
+{
+    --color_scheme_blue: #007dff;
+    --color_scheme_green: #179559;
+    --color_scheme_pink: #ef234f;
+}
+
+#slip
+{
+    border: 1px dashed var(--color_scheme_pink);
+    height: 75vh;
+    width: 25vw;
+    margin-top: 2%;
+    position: absolute;
+    right: 1.5vw;
+    background: transparent;
+    box-shadow: 10px 10px 10px #007dff;
+    color: white;
+    border: 1px solid var(--color_scheme_green);
+    padding: 0;
+    backdrop-filter: blur(20px);
+}
+.slip_hidden
+{
+    display: none;
+}
+/*
+header div#company_header span
+{
+    display: block;
+    width: 100%;
+    background: transparent;
+    backdrop-filter: blur(25px);
+    display: flex;
+    justify-content: space-between;
+    padding: 0 1vw;
+}*/
+.close
+{
+    position: sticky;
+    background-color: var(--color_scheme_green);
+    color: #fff;
+    z-index: 1000;
+    width: fit-content;
+    float: right;
+    padding: 2%;
+    margin: 0;
+}
+
+
+/******** unedited ********/
+
